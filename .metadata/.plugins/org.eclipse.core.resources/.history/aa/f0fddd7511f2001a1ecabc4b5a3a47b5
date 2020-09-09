@@ -1,0 +1,69 @@
+package com.nimble00.stockmarketservice.shared;
+
+import lombok.Data;
+
+import javax.persistence.*;
+
+import com.stockmarket.company2.models.Company;
+
+@Data
+public class IpoDTO {
+
+//    private Integer id;
+    private String companyName;
+    private String stockExchange;
+    private String sharePrice;
+    private Long numShares;
+    private String dateTime;
+    private String remarks;
+	public IpoDTO(String companyName, String stockExchange, String sharePrice, Long numShares, String dateTime,
+			String remarks) {
+		super();
+		this.companyName = companyName;
+		this.stockExchange = stockExchange;
+		this.sharePrice = sharePrice;
+		this.numShares = numShares;
+		this.dateTime = dateTime;
+		this.remarks = remarks;
+	}
+	public IpoDTO() {
+		super();
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getStockExchange() {
+		return stockExchange;
+	}
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+	public String getSharePrice() {
+		return sharePrice;
+	}
+	public void setSharePrice(String sharePrice) {
+		this.sharePrice = sharePrice;
+	}
+	public Long getNumShares() {
+		return numShares;
+	}
+	public void setNumShares(Long numShares) {
+		this.numShares = numShares;
+	}
+	public String getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+    
+}

@@ -1,0 +1,85 @@
+package com.nimble00.stockmarketservice.models;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+public class IPO {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ipo_id")
+    private Integer id;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "company_exchange", joinColumns = {@JoinColumn(name = "company_id") },
+            inverseJoinColumns = {@JoinColumn(name = "exchange_id") })
+    private Company companyName;
+    private String stockExchange;
+    private String sharePrice;
+    private Long numShares;
+    private String dateTime;
+    private String remarks;
+	public IPO(Integer id, Company companyName, String stockExchange, String sharePrice, Long numShares,
+			String dateTime, String remarks) {
+		super();
+		this.id = id;
+		this.companyName = companyName;
+		this.stockExchange = stockExchange;
+		this.sharePrice = sharePrice;
+		this.numShares = numShares;
+		this.dateTime = dateTime;
+		this.remarks = remarks;
+	}
+	public IPO() {
+		super();
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Company getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(Company companyName) {
+		this.companyName = companyName;
+	}
+	public String getStockExchange() {
+		return stockExchange;
+	}
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+	public String getSharePrice() {
+		return sharePrice;
+	}
+	public void setSharePrice(String sharePrice) {
+		this.sharePrice = sharePrice;
+	}
+	public Long getNumShares() {
+		return numShares;
+	}
+	public void setNumShares(Long numShares) {
+		this.numShares = numShares;
+	}
+	public String getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+    
+    
+}

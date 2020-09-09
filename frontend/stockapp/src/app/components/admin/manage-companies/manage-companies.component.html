@@ -1,0 +1,31 @@
+<div class="alert alert-light" role="alert">
+    {{ message }}
+
+    <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Company Id</th>
+              <th>Name</th>
+              <th>Turnover</th>
+              <th>ceo</th>
+              <th>boardOfDirs</th>
+              <th>stockExchangeList</th>
+              <th>sector</th>
+              <th>briefWriteup</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of filterResultDataSet" (click)="onTap(item)">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.turnover}}</td>
+              <td>{{item.ceo}}</td>
+              <td>{{item.boardOfDirs}}</td>
+              <td>{{item.stockExchangeList}}</td>
+              <td>{{item.sector}}</td>
+              <td>{{item.briefWriteup}}</td>
+          </tr>
+      </tbody>
+    </table>
+  
+</div>

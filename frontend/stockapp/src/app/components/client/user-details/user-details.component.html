@@ -1,0 +1,63 @@
+<h1>Hello {{username}}</h1>
+<div class="row">
+    <div class="col-4">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">User General Details</a>
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Update User Detilas</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            
+            <ul class="list-group">
+                <li class="list-group-item "><b>Username</b> : {{username}}</li>
+                <li class="list-group-item "><b>User Email Id</b> : {{email}}</li>
+                <li class="list-group-item "><b>Role</b> : {{roles}}</li>
+                <li class="list-group-item font-weight-bold">Password:</li>
+              </ul>
+        
+            
+        </div>
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+            
+          <form>
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">User Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" id="username" value={{username}}>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="ceo" class="col-sm-2 col-form-label">Email Id</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" id="email" value={{email}}>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="board" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" id="board" value={{password}}>
+              </div>
+            </div>
+
+            
+
+            <div class="form-group row">
+              <button class="btn btn-primary btn-block" (click)="onTap()">
+                Submit
+              </button>
+            </div>
+            
+          </form>
+            
+            
+            </div>
+        </div>
+      </div>
+    </div>
+  
+
